@@ -1,0 +1,4 @@
+SELECT b.`true_name` as 姓名,b.`mobile` as 手机号,c.`company_name` as 品牌,b.`is_commission` as CPS,b.`is_monthly` as CPT
+  FROM `gaodudata`.`customerservicedate` as a
+  LEFT JOIN `gaodudata`.`customer` as b on a.`customer_id`= b.`id`
+  LEFT JOIN `gaodustore`.`storecompanymembers` as c on a.`customer_id`= c.`customer_id` where a.`service_end` >unix_timestamp("2018-07-27 00:00:00") 
